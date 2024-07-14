@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/scss/navbar.scss">
     <link rel="stylesheet" href="assets/scss/variables.scss">
 
-    <title>Contact</title>
+    <title>Blogs</title>
 </head>
 
 <body>
@@ -80,75 +80,7 @@
             </nav>
         </div>
     </header>
-    <main class="contact">
-        <h4>
-            Contact
-        </h4>
-        <h1 class="recent-project">
-            REACH OUT
-        </h1>
-        <div class="section">
-            <div class="contact-content">
-                <h2><a href="tel:+2347017516198">+234 701 751 6198</a></h2>
-                <h2><a href="mailto:jedbert@yahoo.com">jedbert@yahoo.com</a></h2>
-            </div>
-            <div class="socials">
-                <p><a href="https://linkedin.com/in/jed-a-o" target="_blank">LinkedIn</a></p>
-                <p><a href="https://www.instagram.com/albertjedidiah/" target="_blank">Instagram</a></p>
-                <p><a href="https://x.com/JedidiahAlbert" target="_blank">X</a></p>
-                <p><a href="https://web.facebook.com/Jedidiah.A.Olugbenga" target="_blank">Facebook</a></p>
-            </div>
-            <form action="" method="post">
-                <h1 class="form-header">
-                    Any Project?
-                </h1>
-                <div class="input-group">
-                    <div class="input-box">
-                        <input type="text" id="name" name="name" required placeholder="NAME">
-                        <input type="email" id="email" name="mail-address" required placeholder="EMAIL">
-                        <div class="textarea">
-                            <label for="message">MESSAGE</label>
-                            <textarea name="message" id="message" cols="30" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="form-button" onclick="sendEmail(); return false;">Submit now <img
-                        src="assets/images/north_east.svg" alt="connect"></button>
-            </form>
-        </div>
-    </main>
-    <script>
-        function sendEmail() {
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
 
-            if (name === "") {
-                alert("Please enter your name.");
-                return;
-            }
-
-            if (!validateEmail(email)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-
-            if (message === "") {
-                alert("Please enter a message.");
-                return;
-            }
-
-            const subject = "Inquiry from " + name;
-            const body = "From: " + email + "\n\n" + message;
-            const mailtoLink = "mailto:jedbert@yahoo.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-            window.location.href = mailtoLink;
-        }
-
-        function validateEmail(email) {
-            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(String(email).toLowerCase());
-        }
-    </script>
 </body>
 
 </html>
