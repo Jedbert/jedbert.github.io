@@ -1,0 +1,111 @@
+--#{$prefix}navbar-padding-x: #{if($navbar-padding-x == null, 0, $navbar-padding-x)};
+--#{$prefix}navbar-padding-y: #{$navbar-padding-y};
+--#{$prefix}navbar-color: #{$navbar-light-color};
+--#{$prefix}navbar-hover-color: #{$navbar-light-hover-color};
+--#{$prefix}navbar-disabled-color: #{$navbar-light-disabled-color};
+--#{$prefix}navbar-active-color: #{$navbar-light-active-color};
+--#{$prefix}navbar-brand-padding-y: #{$navbar-brand-padding-y};
+--#{$prefix}navbar-brand-margin-end: #{$navbar-brand-margin-end};
+--#{$prefix}navbar-brand-font-size: #{$navbar-brand-font-size};
+--#{$prefix}navbar-brand-color: #{$navbar-light-brand-color};
+--#{$prefix}navbar-brand-hover-color: #{$navbar-light-brand-hover-color};
+--#{$prefix}navbar-nav-link-padding-x: #{$navbar-nav-link-padding-x};
+--#{$prefix}navbar-toggler-padding-y: #{$navbar-toggler-padding-y};
+--#{$prefix}navbar-toggler-padding-x: #{$navbar-toggler-padding-x};
+--#{$prefix}navbar-toggler-font-size: #{$navbar-toggler-font-size};
+--#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-light-toggler-icon-bg)};
+--#{$prefix}navbar-toggler-border-color: #{$navbar-light-toggler-border-color};
+--#{$prefix}navbar-toggler-border-radius: #{$navbar-toggler-border-radius};
+--#{$prefix}navbar-toggler-focus-width: #{$navbar-toggler-focus-width};
+--#{$prefix}navbar-toggler-transition: #{$navbar-toggler-transition};
+
+--#{$prefix}nav-link-padding-x: 0;
+--#{$prefix}nav-link-padding-y: #{$nav-link-padding-y};
+@include rfs($nav-link-font-size, --#{$prefix}nav-link-font-size);
+--#{$prefix}nav-link-font-weight: #{$nav-link-font-weight};
+--#{$prefix}nav-link-color: var(--#{$prefix}navbar-color);
+--#{$prefix}nav-link-hover-color: var(--#{$prefix}navbar-hover-color);
+--#{$prefix}nav-link-disabled-color: var(--#{$prefix}navbar-disabled-color);
+
+// Dark
+
+--#{$prefix}navbar-color: #{$navbar-dark-color};
+--#{$prefix}navbar-hover-color: #{$navbar-dark-hover-color};
+--#{$prefix}navbar-disabled-color: #{$navbar-dark-disabled-color};
+--#{$prefix}navbar-active-color: #{$navbar-dark-active-color};
+--#{$prefix}navbar-brand-color: #{$navbar-dark-brand-color};
+--#{$prefix}navbar-brand-hover-color: #{$navbar-dark-brand-hover-color};
+--#{$prefix}navbar-toggler-border-color: #{$navbar-dark-toggler-border-color};
+--#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-dark-toggler-icon-bg)};
+
+// loops
+
+// Generate series of `.navbar-expand-*` responsive classes for configuring
+// where your navbar collapses.
+.navbar-expand {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($next, $grid-breakpoints);
+
+        // stylelint-disable-next-line scss/selector-no-union-class-name
+        &#{$infix} {
+            @include media-breakpoint-up($next) {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+
+                .navbar-nav {
+                    flex-direction: row;
+
+                    .dropdown-menu {
+                        position: absolute;
+                    }
+
+                    .nav-link {
+                        padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
+                        padding-left: var(--#{$prefix}navbar-nav-link-padding-x);
+                    }
+                }
+
+                .navbar-nav-scroll {
+                    overflow: visible;
+                }
+
+                .navbar-collapse {
+                    display: flex !important; // stylelint-disable-line declaration-no-important
+                    flex-basis: auto;
+                }
+
+                .navbar-toggler {
+                    display: none;
+                }
+
+                .offcanvas {
+                    // stylelint-disable declaration-no-important
+                    position: static;
+                    z-index: auto;
+                    flex-grow: 1;
+                    width: auto !important;
+                    height: auto !important;
+                    visibility: visible !important;
+                    background-color: transparent !important;
+                    border: 0 !important;
+                    transform: none !important;
+                    @include box-shadow(none);
+                    @include transition(none);
+                    // stylelint-enable declaration-no-important
+
+                    .offcanvas-header {
+                        display: none;
+                    }
+
+                    .offcanvas-body {
+                        display: flex;
+                        flex-grow: 0;
+                        padding: 0;
+                        overflow-y: visible;
+                    }
+                }
+            }
+        }
+    }
+}
