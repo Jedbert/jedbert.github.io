@@ -80,9 +80,87 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main class="about">
+        <h4>
+            Nice to meet you!
+        </h4>
+        <h1 class="about-header">Welcome to...</h1>
+        <div class="service-content">
+            <img class="about-image" src="assets/images/Jed.png" alt="Jedidiah">
+            <div class="about-fill">
+                <svg width="286" height="233" viewBox="0 0 366 233" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.0159644 97.4156C12.504 144.249 43.4394 184.059 86.0168 208.089C128.594 232.118 179.326 238.399 227.051 225.548C274.776 212.698 315.586 181.77 340.503 139.567C365.42 97.3642 372.402 47.3444 359.914 0.511163L179.965 48.9634L0.0159644 97.4156Z"
+                        fill="url(#paint0_linear_1_396)" />
+                    <defs>
+                        <lineargradient id="paint0_linear_1_396" x1="1.25793" y1="19.9783" x2="313.142" y2="-62.2621"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFB147" />
+                            <stop offset="0.520264" stop-color="#FF6C63" />
+                            <stop offset="1" stop-color="#B86ADF" />
+                        </lineargradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="about-content">
+                <h2>
+                    Jedidiah A. Olugbenga
+                </h2>
+            </div>
+            <div class="about-headline">
+                <p>
+                    <span class="about-first-word">Frontend Developer </span> <span class="about-middle-word">based
+                        in
+                    </span>
+                    <span class="about-second-word">
+                        Abuja
+                    </span>
+                </p>
+            </div>
+            <div class="download">
+                <a href="https://drive.google.com/file/d/1at8XaQF_oau58k8vAAR0E9cVMl3x9dhq/view?usp=sharing"
+                    target="_blank">Download CV
+                </a>
+                <a class="svg" href="https://drive.google.com/file/d/1at8XaQF_oau58k8vAAR0E9cVMl3x9dhq/view?usp=sharing"
+                    target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect width="24" height="24" fill="#141313" />
+                        <path
+                            d="M8.99995 4.8V6.72H15.3264L4.19995 17.8464L5.55355 19.2L16.68 8.0736V14.4H18.6V4.8H8.99995Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
+            <section class="bio-data">
+                <p id="age-output"></p>
+
+
+            </section>
+        </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        const birthDate = new Date('1999-01-26T00:00:00.000Z');
+        const currentDate = new Date();
+
+        function calculateAge() {
+            const ageInMilliseconds = currentDate - birthDate;
+            const ageInSeconds = ageInMilliseconds / 1000;
+            const ageInMinutes = ageInSeconds / 60;
+            const ageInHours = ageInMinutes / 60;
+            const ageInDays = ageInHours / 24;
+            const ageInYears = ageInDays / 365.25;
+
+            const years = Math.floor(ageInYears);
+            const months = Math.floor((ageInYears - years) * 12);
+
+            document.getElementById('age-output').innerHTML = `${years} years`;
+        }
+
+        calculateAge();
+        setInterval(calculateAge, 1000);
+    </script>
 </body>
 
 </html>
