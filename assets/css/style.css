@@ -777,6 +777,13 @@ header .sidebar a {
     text-decoration: none;
 }
 
+.contact-content h2 a:hover {
+    background: linear-gradient(270deg, #FFB147 5.74%, #FF6C63 50.64%, #B86ADF 92.05%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .section {
     display: flex;
     justify-content: space-between;
