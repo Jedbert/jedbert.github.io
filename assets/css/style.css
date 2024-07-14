@@ -352,10 +352,6 @@ header .sidebar a {
         line-height: 1.875rem;
         text-transform: uppercase;
     }
-
-    /* header .navbar {
-        display: none;
-    } */
 }
 
 @media (min-width: 275px) and (max-width: 700px) {
@@ -375,7 +371,7 @@ header .sidebar a {
         top: 0;
         color: var(--dark-color);
         display: block;
-        position: relative;
+        position: fixed;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -388,13 +384,14 @@ header .sidebar a {
         justify-content: center;
         align-items: center;
         margin: 0;
+        margin-top: 10vh;
         position: relative;
         flex-direction: column;
         top: 0;
         flex-direction: column;
         left: 0;
         width: 100vw;
-        top: 190%;
+        top: 0;
     }
 
     .content h2 {
