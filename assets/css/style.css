@@ -406,6 +406,7 @@ h4 .contact-content:hover {
     border: -1px solid var(--dark-color);
     border-radius: 38.9%;
     overflow: hidden;
+    position: relative;
 }
 
 .about-fill {
@@ -1287,77 +1288,6 @@ overflow-x: hidden;
 
 */
 
-@media (min-width: 700px) and (max-width: 1200px) {
-    body {
-        margin: 0;
-        box-sizing: border-box;
-        padding: 0;
-        width: 100vw;
-    }
-
-    header .sidebar {
-        display: flex;
-        width: 17.5%;
-        flex-direction: column;
-        text-align: left;
-        flex-shrink: 0;
-        border-right: 1px solid rgba(20, 19, 19, 0.10);
-        background: var(--dark-color);
-        /* height: 100vh; */
-    }
-
-    .header {
-        flex-shrink: 0;
-    }
-
-    .header h1 .logo {
-        margin-top: 2.5rem;
-        margin-left: 3rem;
-        margin-right: 4.25rem;
-        display: flex;
-        justify-content: center;
-        color: var(--font-color);
-        text-align: center;
-        font-family: "IBM Plex Serif", serif;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-decoration: none;
-    }
-
-    .content {
-        left: 5%;
-    }
-
-    .content h2 .headline {
-        font-size: 3px;
-    }
-
-    .nav-text {
-        margin-top: 3.25rem;
-        margin-right: 9.06rem;
-        margin-bottom: 30.25rem;
-        margin-left: 1.5rem;
-    }
-
-    /* Sidebar links */
-    .sidebar .nav-text a {
-        text-decoration: none;
-        display: inline-flex;
-        align-items: flex-start;
-        color: var(--font-color);
-        text-align: left;
-        font-family: "IBM Plex Sans";
-        font-size: .95rem;
-        font-style: normal;
-        font-weight: 400;
-        padding: 0.625rem 0.625rem;
-        line-height: 1.875rem;
-        text-transform: uppercase;
-    }
-}
-
 @media (min-width: 275px) and (max-width: 700px) {
     header .sidebar {
         display: none;
@@ -1489,9 +1419,130 @@ overflow-x: hidden;
         display: none;
     }
 
-
-
     .icons-social1 {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Styles for mobile devices */
+
+    body {
+        font-size: 14px;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    /* Styles for tablets */
+
+    body {
+        font-size: 16px;
+    }
+
+    .image {
+        width: 70%;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+    /* Styles for small screens */
+
+    body {
+        font-size: 18px;
+    }
+
+    .image {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (min-width: 1921px) and (aspect-ratio: 16/9) {
+    header .sidebar {
+        display: flex;
+        width: 17.5%;
+        flex-direction: column;
+        text-align: left;
+        flex-shrink: 0;
+        border-right: 1px solid rgba(20, 19, 19, 0.10);
+        background: var(--dark-color);
+        height: 100vh;
+    }
+
+    header .sidebar {
+        display: flex;
+        width: 17.5%;
+        flex-direction: column;
+        text-align: left;
+        flex-shrink: 0;
+        border-right: 1px solid rgba(20, 19, 19, 0.10);
+        background: var(--dark-color);
+        height: 100vh;
+    }
+
+    .header {
+        flex-shrink: 0;
+    }
+
+    .header h1 .logo {
+        margin-top: 2.5rem;
+        margin-left: 3rem;
+        margin-right: 4.25rem;
+        display: flex;
+        justify-content: center;
+        color: var(--font-color);
+        text-align: center;
+        font-family: "IBM Plex Serif", serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+    }
+
+    .content {
+        left: 5%;
+    }
+
+    .content h2 .headline {
+        font-size: 3px;
+    }
+
+    .nav-text {
+        margin-top: 3.25rem;
+        margin-right: 9.06rem;
+        margin-bottom: 30.25rem;
+        margin-left: 1.5rem;
+    }
+
+    /* Sidebar links */
+    .sidebar .nav-text a {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: flex-start;
+        color: var(--font-color);
+        text-align: left;
+        font-family: "IBM Plex Sans";
+        font-size: .95rem;
+        font-style: normal;
+        font-weight: 400;
+        padding: 0.625rem 0.625rem;
+        line-height: 1.875rem;
+        text-transform: uppercase;
     }
 }
