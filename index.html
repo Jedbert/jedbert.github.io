@@ -230,6 +230,29 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const adjustHeight = () => {
+                document.body.style.height = "auto";
+                const bodyHeight = document.body.scrollHeight;
+                document.body.style.height = `${bodyHeight}px`;
+            };
+
+            // Adjust height on DOM content loaded
+            adjustHeight();
+
+            // Adjust height whenever window is resized
+            window.addEventListener('resize', adjustHeight);
+
+            // Adjust height whenever content is changed or loaded
+            const observer = new MutationObserver(adjustHeight);
+            observer.observe(document.body, { childList: true, subtree: true });
+
+            // Optional: Adjust height when an image is loaded (if images dynamically affect height)
+            const images = document.querySelectorAll("img");
+            images.forEach(img => img.addEventListener('load', adjustHeight));
+        });
+    </script>
 </body>
 
 </html>

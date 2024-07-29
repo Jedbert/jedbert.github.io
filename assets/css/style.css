@@ -235,6 +235,19 @@ header .sidebar a {
     position: absolute;
     flex-direction: column;
     top: 0;
+
+}
+
+/* Animation */
+.hero {
+    animation: move-right 1000ms forwards cubic-bezier(.37, .37, .79, .77);
+    transform: translateX(50%);
+}
+
+@keyframes move-right {
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .profile-image {
@@ -399,7 +412,7 @@ h4 .contact-content:hover {
 
 .about-image {
     width: 15vw;
-    height: 46vh;
+    height: auto;
     flex-shrink: 0;
     z-index: 1;
     margin-left: 5vw;
@@ -410,8 +423,9 @@ h4 .contact-content:hover {
 }
 
 .about-fill {
+    display: none;
     position: absolute;
-    margin-top: 16.7vh;
+    margin-top: calc(17.5vh + 20px);
     margin-left: 3.5vw;
 }
 
@@ -1011,282 +1025,7 @@ textarea {
     display: none;
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
-
-    /* About */
-    .about {
-        position: absolute;
-        width: 80vw;
-        height: 85vh;
-        top: calc(50vh - (100vh / 2));
-        left: calc(20vw - (50vw / 2));
-        align-items: center;
-    }
-
-    .service-content {
-        display: flex;
-        position: absolute;
-        width: 100vw;
-    }
-
-    .about-image,
-    .about-fill {
-        display: none;
-    }
-
-    .about-content {
-        position: relative;
-        top: 0h;
-        margin-top: 2vh;
-        right: 15vw;
-    }
-
-    .about-headline {
-        position: absolute;
-        display: flex;
-        /* align-items: center; */
-        top: 0;
-        left: 0;
-        margin-top: 15.5vh;
-        margin-left: -0.090vw;
-    }
-
-    .biodata {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 50vh;
-        width: 100vw;
-        margin-left: 50vw;
-        transform: translateX(-40.5%);
-    }
-
-    .bio-data h4 {
-        font-size: 1rem;
-    }
-
-    .bio-data a {
-        font-size: 1rem;
-    }
-
-    .download {
-        display: none;
-    }
-
-    .experience {
-        display: flex;
-        position: absolute;
-        top: 0;
-        margin: -50vh 19.55vw 0 0;
-        transform: translate(-50%, -50%);
-    }
-
-    .experience .intro {
-        margin-top: 35vh;
-        word-wrap: break-word;
-        overflow-x: hidden;
-        width: 80vw;
-    }
-
-    .data-content {
-        position: relative;
-    }
-
-    .quote {
-        display: flex;
-        position: relative;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 75vw;
-        height: 10vh;
-        top: 0;
-        left: 0;
-        margin-right: 19.55vw;
-        margin-top: -76vh;
-    }
-
-    .quote svg {
-        width: 8vw;
-        height: 4vh;
-        top: 0;
-        margin-top: -5vh;
-        margin-left: 13vw;
-    }
-
-    .quote .quote-text {
-        font-size: x-small;
-        padding-left: 10vw;
-        padding-right: 15vw;
-        word-wrap: break-word;
-        width: 76vw;
-        line-height: -9.5vh;
-        gap: -9.75vh;
-    }
-
-    /* Footer */
-    .bg-body-tertiary {
-        width: 100vw;
-        bottom: 0;
-        display: block;
-        position: fixed;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-x: hidden;
-        height: 13vh;
-    }
-
-    .bg-body-tertiary .pt-4 {
-        display: flex;
-        position: absolute;
-    }
-
-    .bg-body-tertiary .pt-4 .mb-4 {
-        display: flex;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        padding-left: 2vw;
-        padding-right: 2vw;
-        margin-top: -10.9vh;
-        position: absolute;
-    }
-
-    .bg-body-tertiary .pt-4 .mb-4:hover {
-        background: linear-gradient(270deg, #FFB147 5.74%, #FF6C63 50.64%, #B86ADF 92.05%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .bg-body-tertiary .p-3 {
-        display: none;
-        width: 100vw;
-        flex-direction: row;
-        position: fixed;
-        bottom: 0;
-        gap: 0.95rem;
-        z-index: 3;
-    }
-
-    .bg-body-tertiary .p-3 a {
-        text-decoration: none;
-    }
-}
-
-@media (max-width: 475px) {
-    .bg-body-tertiary {
-        width: 100vw;
-        bottom: 0;
-        display: block;
-        position: fixed;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-x: hidden;
-        height: 13vh;
-    }
-
-    .bg-body-tertiary .pt-4 .mb-4 {
-        display: flex;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        padding-left: 2vw;
-        padding-right: 2vw;
-        margin-top: -1.9vh;
-        position: fixed;
-    }
-
-    .bg-body-tertiary .pt-4 .mb-4:hover {
-        background: linear-gradient(270deg, #FFB147 5.74%, #FF6C63 50.64%, #B86ADF 92.05%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .bg-body-tertiary .p-3 {
-        display: flex;
-        width: 100vw;
-        flex-direction: row;
-        position: fixed;
-        bottom: 0;
-        gap: 0.95rem;
-        z-index: 3;
-    }
-
-    .bg-body-tertiary .p-3 a {
-        text-decoration: none;
-    }
-}
-
-
-@media (min-width: 601px) and (max-width: 768px) {
-    .bg-body-tertiary {
-        width: 100vw;
-        bottom: 0;
-        display: block;
-        position: fixed;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-x: hidden;
-        height: 13vh;
-    }
-
-    .bg-body-tertiary .pt-4 .mb-4 {
-        display: flex;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        padding-left: 2vw;
-        padding-right: 2vw;
-        margin-top: -1.9vh;
-        position: fixed;
-    }
-
-    .bg-body-tertiary .pt-4 .mb-4:hover {
-        background: linear-gradient(270deg, #FFB147 5.74%, #FF6C63 50.64%, #B86ADF 92.05%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .bg-body-tertiary .p-3 {
-        display: flex;
-        width: 100vw;
-        flex-direction: row;
-        position: fixed;
-        bottom: 0;
-        gap: 0.95rem;
-        z-index: 3;
-    }
-
-    .bg-body-tertiary .p-3 a {
-        text-decoration: none;
-    }
-}
-
-/* @media (min-width: 769px) {
-    .bg-body-tertiary {
-width: 100vw;
-top: 0;
-display: block;
-position: fixed;
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-z-index: 1000;
-overflow-x: hidden;
-}
-}
-
-*/
+/* Media Queries */
 
 @media (min-width: 275px) and (max-width: 700px) {
     header .sidebar {
@@ -1424,52 +1163,66 @@ overflow-x: hidden;
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 375px) and (max-width: 875px) {
 
-    /* Styles for mobile devices */
+    header .sidebar {
+        display: none;
+    }
 
     body {
-        font-size: 14px;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+        overflow-x: hidden;
     }
 
-    .image {
-        width: 100%;
+    header .navbar {
+        width: 100vw;
+        top: 0;
+        color: var(--dark-color);
+        display: block;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-x: hidden;
     }
 
-}
-
-
-
-
-
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-
-    /* Styles for tablets */
-
-    body {
-        font-size: 16px;
+    .content {
+        left: 5%;
     }
 
-    .image {
-        width: 70%;
+    .content h2 .headline {
+        font-size: 3px;
     }
 
-}
-
-
-
-@media only screen and (min-width: 1024px) and (max-width: 1199px) {
-
-    /* Styles for small screens */
-
-    body {
-        font-size: 18px;
+    .nav-text {
+        margin-top: 3.25rem;
+        margin-right: 9.06rem;
+        margin-bottom: 30.25rem;
+        margin-left: 1.5rem;
     }
 
-    .image {
-        width: 60%;
+    /* Sidebar links */
+    .sidebar .nav-text a {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: flex-start;
+        color: var(--font-color);
+        text-align: left;
+        font-family: "IBM Plex Sans";
+        font-size: .95rem;
+        font-style: normal;
+        font-weight: 400;
+        padding: 0.625rem 0.625rem;
+        line-height: 1.875rem;
+        text-transform: uppercase;
     }
 
+    /* .bg-body-tertiary {
+        display: none;
+    } */
 }
 
 @media only screen and (min-width: 1921px) and (aspect-ratio: 16/9) {
@@ -1481,18 +1234,7 @@ overflow-x: hidden;
         flex-shrink: 0;
         border-right: 1px solid rgba(20, 19, 19, 0.10);
         background: var(--dark-color);
-        height: 100vh;
-    }
-
-    header .sidebar {
-        display: flex;
-        width: 17.5%;
-        flex-direction: column;
-        text-align: left;
-        flex-shrink: 0;
-        border-right: 1px solid rgba(20, 19, 19, 0.10);
-        background: var(--dark-color);
-        height: 100vh;
+        height: calc(100vh + var(--extra-height, 0));
     }
 
     .header {
@@ -1544,5 +1286,59 @@ overflow-x: hidden;
         padding: 0.625rem 0.625rem;
         line-height: 1.875rem;
         text-transform: uppercase;
+    }
+}
+
+/* Large Screens (Desktops and laptops) */
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+
+    /* Styles for large screens */
+    body {
+        font-size: 4px;
+    }
+}
+
+/* Medium Screens (Laptops and large tablets) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+
+    /* Styles for medium screens */
+    body {
+        font-size: 3.5px;
+    }
+}
+
+/* Small Screens (Tablets and small laptops) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+    /* Styles for small screens */
+    body {
+        font-size: 3px;
+    }
+}
+
+/* Extra Small Screens (Mobile devices) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    /* Styles for extra small screens */
+    body {
+        font-size: 2.5px;
+    }
+}
+
+/* Small Mobile Devices (iPhone 5/SE, etc.) */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+
+    /* Styles for small mobile devices */
+    body {
+        font-size: 2px;
+    }
+}
+
+/* Extra Small Mobile Devices (Older smartphones, etc.) */
+@media only screen and (max-width: 320px) {
+
+    /* Styles for extra small mobile devices */
+    body {
+        font-size: 1.5px;
     }
 }
