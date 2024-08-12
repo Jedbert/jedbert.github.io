@@ -29,7 +29,6 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    /* overflow: auto; */
     overflow-x: hidden;
     height: 100%;
 }
@@ -38,23 +37,23 @@ header .navbar {
     display: none;
 }
 
-.sidebar {
+#sidebar {
     margin: 0;
     display: flex;
     width: 11%;
     flex-direction: column;
     text-align: left;
-    height: 100%;
+    height: 105vh;
     flex-shrink: 0;
     border-right: 1px solid rgba(20, 19, 19, 0.10);
     background: var(--dark-color);
 }
 
-.header {
+#header {
     flex-shrink: 0;
 }
 
-.header h1 .logo {
+#header h1 .logo {
     margin-top: 1.5rem;
     left: 5%;
     display: flex;
@@ -76,7 +75,7 @@ header .navbar {
 }
 
 /* Sidebar links */
-header .sidebar a {
+header #sidebar a {
     text-decoration: none;
     display: inline-flex;
     align-items: flex-start;
@@ -92,19 +91,19 @@ header .sidebar a {
 }
 
 /* Active/current link */
-.sidebar a.active {
+#sidebar a.active {
     color: var(--font-color);
     font-weight: 700;
     flex-grow: 1;
 }
 
 /* Links on mouse-over */
-.sidebar a.active:hover {
+#sidebar a.active:hover {
     background: var(--hover-color);
     color: var(--dark-color);
 }
 
-.sidebar .nav-other:hover:not(.active) {
+#sidebar .nav-other:hover:not(.active) {
     background-color: #555;
     color: white;
 }
@@ -1029,7 +1028,7 @@ textarea {
 /* Media Queries */
 
 @media (min-width: 275px) and (max-width: 700px) {
-    header .sidebar {
+    header #sidebar {
         display: none;
     }
 
@@ -1166,7 +1165,7 @@ textarea {
 
 @media only screen and (min-width: 375px) and (max-width: 875px) {
 
-    header .sidebar {
+    header #sidebar {
         display: none;
     }
 
@@ -1207,7 +1206,7 @@ textarea {
     }
 
     /* Sidebar links */
-    .sidebar .nav-text a {
+    #sidebar .nav-text a {
         text-decoration: none;
         display: inline-flex;
         align-items: flex-start;
@@ -1221,14 +1220,10 @@ textarea {
         line-height: 1.875rem;
         text-transform: uppercase;
     }
-
-    /* .bg-body-tertiary {
-        display: none;
-    } */
 }
 
 @media only screen and (min-width: 1921px) and (aspect-ratio: 16/9) {
-    header .sidebar {
+    header #sidebar {
         display: flex;
         width: 17.5%;
         flex-direction: column;
@@ -1236,14 +1231,14 @@ textarea {
         flex-shrink: 0;
         border-right: 1px solid rgba(20, 19, 19, 0.10);
         background: var(--dark-color);
-        height: 100vh;
+        height: 150vh;
     }
 
-    .header {
+    #header {
         flex-shrink: 0;
     }
 
-    .header h1 .logo {
+    #header h1 .logo {
         margin-top: 2.5rem;
         margin-left: 3rem;
         margin-right: 4.25rem;
@@ -1275,7 +1270,7 @@ textarea {
     }
 
     /* Sidebar links */
-    .sidebar .nav-text a {
+    #sidebar .nav-text a {
         text-decoration: none;
         display: inline-flex;
         align-items: flex-start;
@@ -1300,52 +1295,7 @@ textarea {
         height: 120vh;
     }
 
-    .sidebar {
-        height: 100vh;
-    }
-}
-
-/* Medium Screens (Laptops and large tablets) */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-
-    /* Styles for medium screens */
-    body {
-        font-size: 3.5px;
-    }
-}
-
-/* Small Screens (Tablets and small laptops) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-
-    /* Styles for small screens */
-    body {
-        font-size: 3px;
-    }
-}
-
-/* Extra Small Screens (Mobile devices) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-
-    /* Styles for extra small screens */
-    body {
-        font-size: 2.5px;
-    }
-}
-
-/* Small Mobile Devices (iPhone 5/SE, etc.) */
-@media only screen and (min-width: 321px) and (max-width: 480px) {
-
-    /* Styles for small mobile devices */
-    body {
-        font-size: 2px;
-    }
-}
-
-/* Extra Small Mobile Devices (Older smartphones, etc.) */
-@media only screen and (max-width: 320px) {
-
-    /* Styles for extra small mobile devices */
-    body {
-        font-size: 1.5px;
+    #sidebar {
+        height: 150vh;
     }
 }
