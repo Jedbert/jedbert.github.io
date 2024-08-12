@@ -43,7 +43,7 @@ header .navbar {
     width: 11%;
     flex-direction: column;
     text-align: left;
-    height: 105vh;
+
     flex-shrink: 0;
     border-right: 1px solid rgba(20, 19, 19, 0.10);
     background: var(--dark-color);
@@ -1222,8 +1222,9 @@ textarea {
     }
 }
 
-@media only screen and (min-width: 1921px) and (aspect-ratio: 16/9) {
-    header #sidebar {
+/* @media only screen and (min-width: 1921px) and (aspect-ratio: 16/9) {
+
+    #sidebar {
         display: flex;
         width: 17.5%;
         flex-direction: column;
@@ -1269,7 +1270,6 @@ textarea {
         margin-left: 1.5rem;
     }
 
-    /* Sidebar links */
     #sidebar .nav-text a {
         text-decoration: none;
         display: inline-flex;
@@ -1280,22 +1280,20 @@ textarea {
         font-size: .95rem;
         font-style: normal;
         font-weight: 400;
-        padding: 0.625rem 0.625rem;
+        padding: 0.625rem;
         line-height: 1.875rem;
         text-transform: uppercase;
     }
-}
+} */
 
 /* Large Screens (Desktops and laptops) */
-@media only screen and (min-width: 1441px) and (max-width: 1920px) {
-
-    /* Styles for large screens */
+@media (min-width: 1441px) {
     body {
-        font-size: 4px;
-        height: 120vh;
+        display: block;
+        height: 100%;
     }
 
     #sidebar {
-        height: 150vh;
+        height: 105vh;
     }
 }
