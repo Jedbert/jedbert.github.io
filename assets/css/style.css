@@ -31,6 +31,7 @@ body {
     flex-direction: column;
     /* overflow: auto; */
     overflow-x: hidden;
+    height: 100%;
 }
 
 header .navbar {
@@ -43,7 +44,7 @@ header .navbar {
     width: 11%;
     flex-direction: column;
     text-align: left;
-    height: 100vh;
+    height: 100%;
     flex-shrink: 0;
     border-right: 1px solid rgba(20, 19, 19, 0.10);
     background: var(--dark-color);
@@ -140,10 +141,10 @@ header .sidebar a {
 }
 
 .copyright {
-    width: 7rem;
+    width: 7.5rem;
     color: var(--font-color);
     font-family: "IBM Plex Sans";
-    font-size: 0.55rem;
+    font-size: 1em;
     font-style: normal;
     font-weight: 400;
     line-height: 1.375rem;
@@ -1174,6 +1175,7 @@ textarea {
         box-sizing: border-box;
         padding: 0;
         overflow-x: hidden;
+        height: 100%;
     }
 
     header .navbar {
@@ -1234,7 +1236,7 @@ textarea {
         flex-shrink: 0;
         border-right: 1px solid rgba(20, 19, 19, 0.10);
         background: var(--dark-color);
-        height: calc(100vh + var(--extra-height, 0));
+        height: 100vh;
     }
 
     .header {
@@ -1295,6 +1297,11 @@ textarea {
     /* Styles for large screens */
     body {
         font-size: 4px;
+        height: 120vh;
+    }
+
+    .sidebar {
+        height: 100vh;
     }
 }
 
